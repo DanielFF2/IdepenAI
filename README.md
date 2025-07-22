@@ -39,7 +39,7 @@ You can save and load model weights and optimizer states to resume training or d
 ----------------------------------------------------------------------------------------------------------------------------------
 How to use pg_agent (example BipedalWalker):
 
-#Remeber you have to install all of the imports via your terminal, a guide is placed under this example
+#Remember you have to install all of the imports via your terminal, a guide is placed under this example
 
 import numpy as np
 import torch
