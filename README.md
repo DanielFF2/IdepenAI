@@ -98,9 +98,9 @@ Remember you have to install all of the imports via your terminal, a guide is pl
         agent.optimizer_critic.load_state_dict(checkpoint['optimizer_critic_state_dict'])
         starting_episode = checkpoint['episode'] + 1
         episode_rewards = checkpoint['rewards']
-        print(f"Checkpoint carregado: continuando do episódio {starting_episode}")
+        print(f"Loaded Checkpoint: continuing from episode {starting_episode}")
     else:
-        print("Nenhum checkpoint encontrado. Iniciando treinamento do zero.")
+        print("No checkpoint found. Iniciating training.")
 
     agent.action_low = torch.tensor(env.single_action_space.low, device=agent.device)
     agent.action_high = torch.tensor(env.single_action_space.high, device=agent.device)
@@ -120,7 +120,7 @@ Remember you have to install all of the imports via your terminal, a guide is pl
         agent.update()
         mean_reward = np.mean(total_rewards)
         episode_rewards.append(mean_reward)
-        print(f"Episódio {episode+1} | Recompensa média: {mean_reward}")
+        print(f"Episode {episode+1} | Reward: {mean_reward}")
         
         if (episode + 1) % 50 == 0:
             checkpoint = {
@@ -132,7 +132,7 @@ Remember you have to install all of the imports via your terminal, a guide is pl
                 'rewards': episode_rewards
             }
             torch.save(checkpoint, checkpoint_path)
-            print(f"Checkpoint salvo no episódio {episode+1}")
+            print(f"Checkpoint saved in episode {episode+1}")
 
     env.close()
 
@@ -146,7 +146,7 @@ Remember you have to install all of the imports via your terminal, a guide is pl
         'rewards': episode_rewards
     }
     torch.save(checkpoint, checkpoint_path)
-    print("Checkpoint final salvo.")
+    print("Final checkpoint saved.")
 
     # Saving file after training is done
     torch.save(agent.actor.state_dict(), "bipedalwalker_ppo_actor.pth")
@@ -155,9 +155,9 @@ Remember you have to install all of the imports via your terminal, a guide is pl
     # Plot the end result (many ways to do so)
     plt.figure(figsize=(10, 6))
     plt.plot(range(1, len(episode_rewards) + 1), episode_rewards)
-    plt.title("Recompensas por Episódio (BipedalWalker - PPO)")
-    plt.xlabel("Episódio")
-    plt.ylabel("Recompensa")
+    plt.title("Reward per episode (BipedalWalker - PPO)")
+    plt.xlabel("Episode")
+    plt.ylabel("Reward")
     plt.savefig("bipedalwalker_ppo_rewards.png")
     plt.show()
 
