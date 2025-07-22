@@ -39,19 +39,19 @@ You can save and load model weights and optimizer states to resume training or d
 ----------------------------------------------------------------------------------------------------------------------------------
 How to use pg_agent (example BipedalWalker):
 
-#Remember you have to install all of the imports via your terminal, a guide is placed under this example
+Remember you have to install all of the imports via your terminal, a guide is placed under this example
 
-import numpy as np
-import torch
-import matplotlib.pyplot as plt
-import gym
-import os
-import json
-from pg_agent import PPOAgent
-
-if __name__ == "__main__":
-    from pg_agent import PPOAgent
     import numpy as np
+    import torch
+    import matplotlib.pyplot as plt
+    import gym
+    import os
+    import json
+    from pg_agent import PPOAgent
+    
+    if __name__ == "__main__":
+        from pg_agent import PPOAgent
+        import numpy as np
 
     #Only use this if you're having troble with compatibility in gym versions
     if not hasattr(np, 'bool8'):
