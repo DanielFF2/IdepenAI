@@ -186,9 +186,10 @@ If you encounter errors related to wheels (e.g., Box2D or MuJoCo), check your Py
 3. Clone the repository
 
     git clone https://github.com/DanielFF2/IndepenAI.git
+
     cd IndepenAI
 
-4. Run the Example
+5. Run the Example
 
     python how_to_use_agents.py (put the example in a py file to run the code)
 ----------------------------------------------------------------------------------------------------------------------------------
