@@ -35,6 +35,7 @@ IndepenAI works with any Gym-compatible environment (e.g., CartPole, BipedalWalk
 
 Checkpointing:
 You can save and load model weights and optimizer states to resume training or deploy trained agents.
+
 ----------------------------------------------------------------------------------------------------------------------------------
 How to use pg_agent (example BipedalWalker):
 
