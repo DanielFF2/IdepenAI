@@ -122,7 +122,6 @@ Remember you have to install all of the imports via your terminal, a guide is pl
         episode_rewards.append(mean_reward)
         print(f"Episódio {episode+1} | Recompensa média: {mean_reward}")
         
-        # Salvar checkpoint a cada 50 episódios
         if (episode + 1) % 50 == 0:
             checkpoint = {
                 'actor_state_dict': agent.actor.state_dict(),
